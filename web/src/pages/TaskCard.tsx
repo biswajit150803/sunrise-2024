@@ -18,11 +18,11 @@ interface Task {
 }
 
 const TaskCard: React.FC<TaskProps> = ({ id, title, description, persona, group, boolValue }) => {
-  const [startUpdate, setUpdate] = useState<boolean>(false);
+  const [startUpdate, setStartUpdate] = useState<boolean>(false);
   const [form] = Form.useForm();
 
   const updateClick = () => {
-    setUpdate(true);
+    setStartUpdate(true);
     form.setFieldsValue({ title, description, persona, group });
   };
 
@@ -53,7 +53,7 @@ const TaskCard: React.FC<TaskProps> = ({ id, title, description, persona, group,
   };
 
   const reset = () => {
-    setUpdate(false);
+    setStartUpdate(false);
   };
 
   const deleteTask = async () => {
