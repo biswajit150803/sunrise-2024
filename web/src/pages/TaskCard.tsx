@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Card } from 'antd';
 import Task from '../model/Task';
-import { Button, Divider, Flex, Radio, Space, Tooltip } from 'antd';
+import { Button, Divider,Card} from 'antd';
 import { Form, Input } from 'antd';
 import { CheckOutlined, CloseOutlined, EditOutlined } from '@ant-design/icons';
 
@@ -151,22 +150,7 @@ const [form] = Form.useForm();
 
       }
     </Card>
-    // </div>
-    //   )}
-    // </Draggable>
   );
 };
 
 export default TaskCard;
-
-// <Draggable draggableId={task.id.toString()} index={index}>
-//   {(provided) => (
-//     <div
-//       ref={provided.innerRef}
-//       {...provided.draggableProps}
-//       {...provided.dragHandleProps}
-//       style={{
-//         ...provided.draggableProps.style,
-//         margin: "10px",
-//       }}
-//     >

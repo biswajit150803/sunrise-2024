@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from "react";
-// import { DragDropContext, Droppable, DropResult } from "react-beautiful-dnd";
 import TaskCard from "./TaskCard";
-import { initialTasks } from "@/utils/TaskList";
-import { Inter } from "next/font/google";
-// import { useStateValue } from "@/context/StateProvider";
 import Task from "@/model/Task";
-const inter = Inter({ subsets: ["latin"] });
-import { Badge, Space, Switch } from "antd";
+import { Badge} from "antd";
 import CreateModal from "./CreateModal";
 
 type RestType = {
@@ -19,7 +14,6 @@ type FormatDataType = {
 };
 
 export default function Home() {
-  const [tasks, setTasks] = useState(initialTasks);
 
   // Backend api calls
   const getActiveData = async () => {
@@ -118,7 +112,7 @@ export default function Home() {
         </div>
           <div className="grid grid-cols-2 gap-4 w-[100vw] lg:w-[30vw]">
             {data !== undefined &&
-              data.todo.map((task: Task, index: number) => (
+              data.todo.map((task: Task) => (
                 <>
                   {" "}
                   {task !== undefined && (
