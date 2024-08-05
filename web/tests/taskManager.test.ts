@@ -101,4 +101,20 @@ describe('Task Manager', () => {
       expect.objectContaining({ title: 'Basic Git' })
     );
   });
+
+  // Test cases added by me
+  test("after deleting all task there shouldn't be any active tasks", () => {
+    const allTasks = getAllTasks();
+    allTasks.forEach(task => deleteTask(task.id));
+    const activeTasksAfterDelete = getActiveTasks().length;
+    expect(activeTasksAfterDelete).toEqual(0);
+  }
+);
+  test("after completing all task there shouldn't be any active tasks", () => {    
+    const allTasks = getAllTasks();
+    allTasks.forEach(task => completeTask(task.title));
+    const activeTasksAfterComplete = getActiveTasks().length;
+    expect(activeTasksAfterComplete).toEqual(0);
+  }
+);
 });
