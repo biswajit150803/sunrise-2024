@@ -3,13 +3,11 @@ import { Button, Divider, Card, Form, Input } from 'antd';
 import { CheckOutlined, CloseOutlined, EditOutlined } from '@ant-design/icons';
 
 interface TaskProps {
-  task: Task;
   id: number;
   title: string;
   description: string;
   persona: string;
   group: number;
-  completed: boolean;
   boolValue: boolean;
 }
 

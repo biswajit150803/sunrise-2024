@@ -1,10 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import {
-  initializeTasks,
   getActiveTasks,
   getCompletedTasks,
   getAllTasks,
-  completeTask,
   createTask,
   updateTask,
   deleteTask,
@@ -20,7 +18,6 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  // initializeTasks();
 
   switch (req.method) {
     case "GET":

@@ -117,7 +117,7 @@ const TaskSection: React.FC<TaskSectionProps> = ({ title, tasks, showBadge, clas
     </div>
     <div className={className}>
       {tasks?.map((task: Task) => (
-        task && <TaskCard key={task.id} {...task} task={task} boolValue={false} />
+        task && <TaskCard key={task.id} {...task} boolValue={false} />
       ))}
     </div>
   </div>
@@ -139,7 +139,7 @@ const InProgressSection: React.FC<InProgressSectionProps> = ({ data }) => (
       <div className="grid grid-cols-2 gap-4 w-[100vw] lg:w-[30vw]">
         {data?.data.slice(0, 2).map((task: Task, index: number) => (
           <React.Fragment key={task.id}>
-            <TaskCard {...task} task={task} boolValue={index === 0} />
+            <TaskCard {...task} boolValue={index === 0} />
             {index === 0 && data.data[1] && data.data[0].group !== data.data[1].group && <br />}
           </React.Fragment>
         ))}
